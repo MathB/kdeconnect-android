@@ -101,6 +101,10 @@ public class MprisActivity extends ActionBarActivity {
                                     if (currentArt != null) {
                                         artView.setImageBitmap(currentArt);
                                     }
+                                    else {
+                                        artView.setImageBitmap(null);
+                                    }
+
                                 }
 
                                 //Hacks for Spotify because it reports incorrect info about what it supports
@@ -165,6 +169,7 @@ public class MprisActivity extends ActionBarActivity {
                                     findViewById(R.id.no_players).setVisibility(View.VISIBLE);
                                     spinner.setVisibility(View.GONE);
                                     ((TextView) findViewById(R.id.now_playing_textview)).setText("");
+                                    ((ImageView)findViewById(R.id.artImageView)).setImageBitmap(null);
                                 } else {
                                     findViewById(R.id.no_players).setVisibility(View.GONE);
                                     spinner.setVisibility(View.VISIBLE);
@@ -186,6 +191,7 @@ public class MprisActivity extends ActionBarActivity {
                                         ((TextView) findViewById(R.id.now_playing_textview)).setText("");
                                         ((TextView) findViewById(R.id.time_textview)).setText(milisToProgress(0));
                                         ((SeekBar)findViewById(R.id.positionSeek)).setMax(0);
+                                        ((ImageView)findViewById(R.id.artImageView)).setImageBitmap(null);
                                     }
 
                                     @Override
